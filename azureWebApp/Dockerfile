@@ -13,7 +13,7 @@ WORKDIR "/src/azureWebApp"
 RUN dotnet build "azureWebApp/azureWebApp.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "azureWebApp/azureWebApp.csproj" -c Release -o /app/publish
+RUN dotnet publish "azureWebApp.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
