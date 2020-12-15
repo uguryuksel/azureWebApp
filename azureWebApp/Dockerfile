@@ -6,7 +6,7 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["azureWebApp/azureWebApp.csproj", "azureWebApp/"]
+COPY ["azureWebApp.csproj", "azureWebApp/"]
 RUN dotnet restore "azureWebApp/azureWebApp.csproj"
 COPY . .
 WORKDIR "/src/azureWebApp"
