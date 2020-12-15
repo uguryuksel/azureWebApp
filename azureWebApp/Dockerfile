@@ -8,7 +8,7 @@ COPY ["azureWebApp.csproj", "azureWebApp/"]
 RUN dotnet restore "azureWebApp/azureWebApp.csproj"
 COPY . .
 WORKDIR "/src/azureWebApp"
-RUN dotnet build "../azureWebApp.csproj" -c Release -o /app/build
+RUN dotnet build "azureWebApp/azureWebApp.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "azureWebApp.csproj" -c Release -o /app/publish
